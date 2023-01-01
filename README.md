@@ -1,7 +1,7 @@
 # RadeonOverclocking
 Overclocking guide for AMD Radeon GPUs.
 
-Obviously I just created this repo, and there's absolutely nothing here for now. Stuff will get added in the coming weeks.
+For the actual guide, please click [here](Radeon%20Overclocking.md)
 
 ## About
 I've seen a [Nvidia Overclocking guide](https://github.com/LunarPSD/NvidiaOverclocking) on GitHub, as well as an [DDR4 OC guide](https://github.com/integralfx/MemTestHelper). Yet there's nothing for AMD cards, and as an owner of an RX 6900XT, I was frustrated by the lack of information avalible, so I compiled everything from the internet and combined it with my own experience to form this guide. I hope you can learn something from here!
