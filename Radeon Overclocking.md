@@ -19,14 +19,14 @@
 # Preface
 Overclocking is about pushing hardware and silicon out of their comfort zone in pursuit of performance. Overclocking is inheritantly dangerous, it's just the amount you're willing to risk.
 
-It's not as bad as it sounds to be honest, sure, you're risking your hardware, but you're very likely to become thermally limited or even power limited before you're at the point of putting in absurd voltages and frying your hardware. With all the software and hardware safeguards you're probably fine.
+It's not as bad as it sounds to be honest. Sure, you're risking your hardware, but you're very likely to become thermally limited or even power limited before you're at the point of putting in absurd voltages and frying your hardware. With all the software and hardware safeguards you're probably fine.
 
 With that out of the way, how do you overclock your AMD GPU?
 
 # Prequisites
 You need an AMD Radeon GPU, that's obvious. I'm not going to cover overclocking ancient ATI cards, nor the Polaris and Vegas. If you're here for instructions for those cards, you'll have to look elsewhere.
 
-Specifically, I'm going to focus on the RDNA cards, which is the RX 5000 series and above. The instructions for all the RDNA cards is identical, so you don't have to worry about generation specific 
+Specifically, I'm going to focus on the RDNA cards, which is the RX 5000 series and above. The instructions for all the RDNA cards is identical, so you don't have to worry about generation specific instructions.
 
 Now, you'll also need some required software, and they're as follows:
 
@@ -41,10 +41,13 @@ Any guide or review lacking testing methodology is not a good guide, so I'll inc
 
 Throughout the guide, I'm using my Sapphire RX 6900XT Nitro+ SE for demonstration. The fan curve is default, Resizable BAR is enabled. Remember, everything I say, like benchmark score and percentage is all relative to my GPU, so yours, even when following the exact instructions, might be a little different. 
 
-Case: Corsair 4000D Airflow
-CPU: i7 12700K stock, Gear 2
-RAM: 32GB DDR4 4000 Trident Z Royale
-Motherboard: ROG Strix Z690-A
+| Hardware      | Model         |
+| ------------- | ------------- |
+| CPU  | i7 12700K  |
+| GPU  | Sapphire RX 6900XT Nitro+ SE  |
+| RAM | 32GB DDR4 4000 Trident Z Royale Gear 2|
+| Motherboard | Strix Z690-A |
+| Case | Corsair 4000D Airflow |
 
 All benchmarks were ran 3 times with the average taken.
 
@@ -145,10 +148,10 @@ TPU and their [Asus Strix RX 5700 XT review](https://www.techpowerup.com/review/
 
 Tom's Hardware for reviewing the [RX 6900 XT](https://www.tomshardware.com/reviews/amd-radeon-rx-6900-xt-review) for confirming how RDNA2 overclocks and providing a comparison for my card. I also used the screenshot for the BIOS page from their [Z690 A review](https://www.tomshardware.com/reviews/asus-rog-strix-z690a-gaming-review/2).
 
-Extreme overclocker Der8auer for dissecting and doing testing on his Reference RX 7900 XTX, leading to the conclusion of a defective vapor chamber. Information via a [Tom's Hardware's article](https://www.tomshardware.com/news/defective-vapor-chamber-may-be-causing-rx-7900-xtx-overheating-issue)
+Extreme overclocker Der8auer for dissecting and doing testing on his Reference RX 7900 XTX, leading to the conclusion of a defective vapor chamber. Information via a [Tom's Hardware's article](https://www.tomshardware.com/news/defective-vapor-chamber-may-be-causing-rx-7900-xtx-overheating-issue).
 
 [^1]: This is most obvious comparing a Reference 6900XT and the Strix 6800XT. The Strix have much more power available and it can beat the overclocked Reference 6900XT when the Strix is pushed to the limits.
 [^2]: By "power", I mean the rated TGP, and not the actual comsumed power. However, in practice, those two values are pretty similar, the GPU won't exceed TGP by more than a watt or two.
 [^3]: Unlike Nvidia cards, where overclocking the VRAM will cause visual artifacts and corrupt textures, the only indication the VRAM is at its limit for AMD is regressing performance. 
-[^4]: When going from idle to full power, all devices, graphics card or CPU, will take a few milisecond to ramp up, depending on the device. Dialing up the minimum clocks effectively cancels this ramp up at the cost of running the card at full speed perpetually, which is not worth the absurd idle power consumption this comes with. A good analogy would be running your car's engine at 3000 RPM waiting for the red light for the *tiny* advantage when it turns green, at the cost of absurd amounts of fuel.
+[^4]: When going from idle to full power, all devices, graphics card or CPU, will take a few milisecond to ramp up, depending on the device. Dialing up the minimum clocks effectively cancels this ramp up at the cost of running the card at full speed perpetually, which is not worth the absurd idle power consumption this comes with. A good analogy would be running your car's engine at 3000 RPM waiting for the red light for the *tiny* advantage during launch, at the cost of absurd amounts of fuel.
 [^5]: Back in April 2021, famous overclocker Der8auer set a record for the RX 6900 XT, a whopping 3.225GHz on LN2. His [video](https://www.youtube.com/watch?v=fhP46XWMkdY) on the subject have some fairly interesting insights about AMD's clock limits and extreme overclocking.
