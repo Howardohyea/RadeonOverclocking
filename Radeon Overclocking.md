@@ -9,6 +9,11 @@
     4. [Tuning the VRAM](#tuning-the-vram)
     5. [Changing Clocks and Voltage](#changing-clocks-and-voltage)
         - [RDNA1 specific instructions](#rdna1-specific-instructions)
+- [Extra](#extra)
+    1. [Enabling Resizable BAR on Intel CPUs](#enabling-resizable-bar-on-intel-cpus)
+    2. [Pushing past the frequency limit](#pushing-past-the-frequency-limit)
+    3. [The RDNA3 Hotspot issue](#the-rdna3-hotspot-issue)
+    4. [Difference between different AIB models](#difference-between-different-aib-models)
 - [Credits](#credits)
 
 # Preface
@@ -51,12 +56,12 @@ However, before we do any tuning, we need to get some baseline of how your GPU p
 ## The Software
 The tuning page is hidden away pretty well, You need to go to `Performance` --> `Tuning`, and under `Tuning Control`, select `Custom`.
 ![Performance Tuning](/Assets/Tuning%20Page.jpg)
-There's also one Tuning Preset, `Rage Mode`, that ups your power limit and *doesn't void the warranty*. The performance gain isn't much, but for users who want to play it *absolutely safe*, the option is there.
+There's also one Tuning Preset that's worth noting, `Rage Mode`, that ups your power limit and *doesn't void the warranty*. The performance gain is pretty laughable, but for users who want to play it *absolutely safe*, the option is there.
 
-There's a strange feature in AMD software where `Advanced Control` just changes the slider from percentage based into the actual value. I suggest enabling this for every setting.
+There's a strange feature in AMD software where `Advanced Control` just changes the slider from percentage based into the actual value. I suggest enabling this for every setting. You also need to `Enable` the specific tuning category in order to make any changes
 
 ## Getting a Baseline
-Open 3DMark and run Time Spy, and to save time, I suggest running a Custom Test without the CPU test. 
+Open 3DMark and run Time Spy Extreme, and to save time, I suggest running a Custom Test without the CPU test. 
 ![the recommended test and setting](/Assets/3D4K.jpg)
 After you ran the test, note that score down. 
 
@@ -67,13 +72,15 @@ Modern cards have a lot of safeguards, so it's going to be hard to brick the GPU
 ![shown here with default settings](Assets/Power%20Limit.jpg)
 At stock, my card is rated for 289 watts. If we put the slider to the max, the TDP jumps to 332 watts instead. So what performance does the extra 43 watts get us?
 
-After some benchmarks, I got 10272. A 4.3% improvement for 15% more power[^2]. Not good enough, let's do some more tuning.
+After some benchmarks, I got `10272`. A 4.3% improvement for 15% more power[^2]. Not good enough, let's do some more tuning.
 
 ## Tuning the VRAM
-VRAM is like the GPU's system RAM, and unlike system RAM, tweaking VRAM is as simple as changing a slider. Beware, however, that upping the memory clock too much will cause performance regression[^3]. However, for some GPUs and models, you may run into the slider limit before performance regresses.
+VRAM is like the GPU's system RAM, and unlike system RAM, tweaking VRAM is as simple as changing a slider. Beware, however, that upping the memory clock too much will cause performance regression[^3]. However, for some GPUs and models, you may be limited by the slider first before running into memory limits.
 
 I suggest starting from the max, lower the VRAM in 50MHz steps and running a 3DMark test. If performance regresses, you could try to fine tune and get the optimal setting. It's also safe to enable `Fast Timings` in the setting, which improved my score by about 800 to 1000 points.
 ![Memory overclocking is on the bottom left](/Assets/memory%20tuning.jpg)
+
+With VRAM maxed out and Fast Timings enabled, `10565` is the end result, 7% improvement over stock, we're making good progress! 
 
 ## Changing Clocks and Voltage
 Now, the GPU have access to more power, but it might not know how to tap into the extra potential, thus creating such inefficiency. It's only until we tweak the Voltage and Clock does the card know what to do. For starters, leave the minimum clock alone, changing that would only result in very bad idle power consumption and no perceivable performance gain[^4]. 
@@ -90,7 +97,7 @@ When you reach the wall, now's the time to dial an increase for the Clock Limit 
 
 1. Decrease voltage until the frequency reach the Clock Limit slider.
 2. Increase Clock Limit by 100MHz
-3. Repeat step 1-2 until the GPU exhibits instability and crashes. 
+3. Repeat step 1-2 until the GPU exhibits instability and/or your PC crashes. 
 
 That's it! You're overclocking!
 
@@ -102,16 +109,46 @@ There was a lot of memes about how bad the RX 5700XT drivers were. Well, it was 
 
 However, I need to do more research regarding the relation between voltage and frequency for RDNA1. If anyone is kind enough to try the above instructions on their card please let me know the result.
 
+# Extra
+There is some other information about those cards that I want to point out, or just additional information.
+
+## Enabling Resizable BAR on Intel CPUs
+When you hover your mouse over the ReBAR toggle, the software claims "This feature is only available on AMD CPU or APU paired with an AMD GPU". I'm not sure what AMD is trying to achieve here, spreading false information, but it's totally possible to turn this on with an Intel CPU.
+
+You'll have to go in to your motherboard's BIOS, typically by pressing `Delete` on startup. Once you're in, look for the Resizable BAR option or toggle, which is up top, in this picture.
+![The BIOS layout of a Strix Z690-A](/Assets/AsusBIOS.jpg)
+Once ReBAR is enabled, you can save, exit, and enable it through AMD Software's Tuning page. 
+
+## Pushing past the frequency limit
+You might've noticed there's a limit to the frequency slider I mentioned previously. Well, a lot of people might wonder about going past that. The thing is, without modding and alterations to the hardware and/or software, you can't go past it. There is some select GPUs that doesn't have the limit, but as of this writing, I'm only aware of 6900XT with the XTXH die that doesn't have the frequency cap. Feel free to correct me if I'm wrong[^5].
+
+Thing is, I doubt this limit would do much to most people anyways. The limit for the RX 6900 XT is 3GHz, and I imagine it is going to take some insane effort and cooling to hit it anyways, so I won't worry too much about the said limit.
+
+## The RDNA3 Hotspot issue
+After the launch of RDNA3, buyers of AMD's Reference cards reported their card's hotspot temperature could shoot up to 110C after putting any load on the card. After some journalist and overclockers investigated, the issue appears to stem from a vapor chamber design flaw, causing the liquid to unable to circulate back to the GPU after condensation.
+
+This appears to be specific to the Reference cards, so I suggest you buying a card from an AIB, like Asus or Sapphire, just to name a few.
+
+## Difference Between different AIB models
+Not all cards are created equal. The variance in silicon quality aside, differences between different AIB cards of the same model will cause variance in performance as well. Let's take my Sapphire RX 6900 XT and the AMD Reference Card as an example. The most notable difference is the Sapphire have dual VBIOSes and an extra 6 pin power connector, which gives it an extra 75 watts compared to the Reference Card. It's those additional features (which may or may not be on my card), like extra power connectors, better cooler, advanced power delivery, which benefits overclocking the most. 
+
+The difference between different cards starts to shrink as we start looking below the flagship. At the mid-range, where advanced power and extra power connectors is no longer a concern, the delta between the cards starts to narrow down. At the low range, like 75 watts or so, it doesn't matter at all at this point. Any cards would perform identically to each other. 
+
+With that in mind, the difference between low and mid-range AIB cards is minimal, it's only when we go higher into flagship territory does extra features matter.
+
 # Credits
-Did you think I did all the testing myself for this guide? Of course not! I'd like to thank the following sources and/or people for providing me with information.
+Did you think I did all the testing myself for this guide? Of course not! I'd like to thank the following sources and/or people that made this guide possible.
 
 TechPowerUp and their [Asus RX 7900 XTX OC review](https://www.techpowerup.com/review/asus-radeon-rx-7900-xtx-tuf-oc/39.html), helping me provide insight to how RDNA3 overclocks.
 
-TPU and their [Asus Strix RX 5700 XT review](https://www.techpowerup.com/review/asus-radeon-rx-5700-xt-strix-oc/32.html), which provided simple overclocking instructions.
+TPU and their [Asus Strix RX 5700 XT review](https://www.techpowerup.com/review/asus-radeon-rx-5700-xt-strix-oc/32.html), which provided simple overclocking instructions for RDNA1.
 
-Tom's Hardware for reviewing the [RX 6900 XT](https://www.tomshardware.com/reviews/amd-radeon-rx-6900-xt-review) for confirming how RDNA2 overclocks and providing a comparison for my card.
+Tom's Hardware for reviewing the [RX 6900 XT](https://www.tomshardware.com/reviews/amd-radeon-rx-6900-xt-review) for confirming how RDNA2 overclocks and providing a comparison for my card. I also used the screenshot for the BIOS page from their [Z690 A review](https://www.tomshardware.com/reviews/asus-rog-strix-z690a-gaming-review/2).
+
+Extreme overclocker Der8auer for dissecting and doing testing on his Reference RX 7900 XTX, leading to the conclusion of a defective vapor chamber. Information via a [Tom's Hardware's article](https://www.tomshardware.com/news/defective-vapor-chamber-may-be-causing-rx-7900-xtx-overheating-issue)
 
 [^1]: This is most obvious comparing a Reference 6900XT and the Strix 6800XT. The Strix have much more power available and it can beat the overclocked Reference 6900XT when the Strix is pushed to the limits.
 [^2]: By "power", I mean the rated TGP, and not the actual comsumed power. However, in practice, those two values are pretty similar, the GPU won't exceed TGP by more than a watt or two.
 [^3]: Unlike Nvidia cards, where overclocking the VRAM will cause visual artifacts and corrupt textures, the only indication the VRAM is at its limit for AMD is regressing performance. 
-[^4]: When going from idle to full power, all devices, graphics card or CPU, will take a few milisecond to ramp up, depending on the device. Dialing up the minimum clocks effectively cancels this ramp up at the cost of running the card at full speed perpetually, which is not worth the absurd idle power consumption this comes with.
+[^4]: When going from idle to full power, all devices, graphics card or CPU, will take a few milisecond to ramp up, depending on the device. Dialing up the minimum clocks effectively cancels this ramp up at the cost of running the card at full speed perpetually, which is not worth the absurd idle power consumption this comes with. A good analogy would be running your car's engine at 3000 RPM waiting for the red light for the *tiny* advantage when it turns green, at the cost of absurd amounts of fuel.
+[^5]: Back in April 2021, famous overclocker Der8auer set a record for the RX 6900 XT, a whopping 3.225GHz on LN2. His [video](https://www.youtube.com/watch?v=fhP46XWMkdY) on the subject have some fairly interesting insights about AMD's clock limits and extreme overclocking.
