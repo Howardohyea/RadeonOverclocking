@@ -82,8 +82,6 @@ Strangely, only upping the Clock Limit slider doesn't seem to do a whole lot per
 
 For RDNA cards, Clock and Voltage is inversely related, lowering voltage will increase your clock. This seems counterintunitive, especially compared to how CPU overclocking works, but with lower voltages more power will become available to the GPU, thus clocking higher.
 
-<!--First off, note your clock your card is running during a benchmark, to check if the frequency is being capped by the maximum clock slider. If the clock is being capped by the maximum clock slider, increase the maximum clock by 100MHz and do another benchmark run until the frequency is no longer capped.-->
-
 First off, don't go and crank the GPU core frequency dial all the way to the max allowed, we need to tweak the voltage first. Start by dropping voltages in small steps, run a benchmark to check the core clock, until you reach "the wall".
 
 For RDNA2 and 3, there's a "wall" that doesn't allow the card to clock higher despite being below the max frequency allowed. This wall is around 50MHz below the Clock Limit specified by the software. In essence, "Maximum Frequency" seems to be "Maximum minus 50". 
@@ -96,13 +94,16 @@ When you reach the wall, now's the time to dial an increase for the Clock Limit 
 
 That's it! You're overclocking!
 
+<!-- Insert overclocked screenshot and OC score here
+-->
+
 ### RDNA1 specific instructions
 There was a lot of memes about how bad the RX 5700XT drivers were. Well, it was *abysmal* at launch, but gotten vastly better in the coming months. However, overclocking is relatively simple for that generation. Upping the core and memory clocks directly yields an improvement in performance. 
 
 However, I need to do more research regarding the relation between voltage and frequency for RDNA1. If anyone is kind enough to try the above instructions on their card please let me know the result.
 
 # Credits
-Did you think I did all the testing myself for this guide? Of course not! I'd like to thank the following sources and people for providing me with information.
+Did you think I did all the testing myself for this guide? Of course not! I'd like to thank the following sources and/or people for providing me with information.
 
 TechPowerUp and their [Asus RX 7900 XTX OC review](https://www.techpowerup.com/review/asus-radeon-rx-7900-xtx-tuf-oc/39.html), helping me provide insight to how RDNA3 overclocks.
 
