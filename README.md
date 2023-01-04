@@ -1,5 +1,5 @@
 # RadeonOverclocking
-Overclocking guide for AMD Radeon GPUs. This guide specifically focuses on the RDNA cards, which is RX 5000 series and above. I am not covering the Polaris and Vegas. 
+Overclocking guide for AMD Radeon GPUs. This guide specifically focuses on the RDNA cards, which is RX 5000 series and above. I am not covering the Polaris and Vegas. I might include them, at a future date.
 
 For the actual guide, please click [here](Radeon%20Overclocking.md)
 
