@@ -1,7 +1,7 @@
 # RadeonOverclocking
 Overclocking guide for AMD Radeon GPUs. This guide specifically focuses on the RDNA cards, which is RX 5000 series and above. I am not covering the Polaris and Vegas. I might include them, at a future date.
 
-For the actual guide, please click [here](Radeon%20Overclocking.md)
+For the actual guide, please click [here](Radeon%20Overclocking.md).
 
 ## About
 I've seen a [Nvidia Overclocking guide](https://github.com/LunarPSD/NvidiaOverclocking) on GitHub, as well as an [DDR4 OC guide](https://github.com/integralfx/MemTestHelper). Yet there's nothing for AMD cards, and as an owner of an RX 6900XT, I was frustrated by the lack of information avalible, so I compiled everything from the internet and combined it with my own experience to form this guide. I hope you can learn something from here!
@@ -22,6 +22,6 @@ If you feel like you have some changes or anything you want to implement, just m
 <!-- contact-->
 
 <!-- I've left this out in the actual document because not a lot of people will go and look at the source, so it should eliminate most spams. I hope whoever's reading this will only contact me with good faith.
-Discord: Howardohyea#0001
+Discord: Howardohyea#6904
 email: howardohyea@outlook.com
 -->
