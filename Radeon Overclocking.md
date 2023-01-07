@@ -33,13 +33,13 @@ Now, you'll also need some required software, and they're as follows:
 1. [AMD Software: Adrenalin Edition](https://www.amd.com/en/support), their software comes with a built in overclocking tool, so we'll be using it.
 2. [HWInfo](https://www.hwinfo.com/) for monitoring system temperature, power draw, fans, and just about anything.
 3. [3DMark](https://3dmark.com), a synthetic benchmark for both CPU and GPU, it's not very good for comparison between hardware but useful to test overclocking and stability. The full test is paid but the free demo can be found [here](steam://install/231350), this demo link requires Steam to be installed to your PC.
-4. [Unigine Heaven](https://benchmark.unigine.com/heaven) is absolutely ancient. First released in 2009 for DX11 it's also a tech demo and benchmark rolled into one. It's not indicative of performance but it can load a GPU and runs in the background.
+4. **Optional** [Unigine Heaven](https://benchmark.unigine.com/heaven) is absolutely ancient. First released in 2009 for the then-bleeding edge DX11, it's a tech demo and benchmark rolled into one. It's not recommended these days due to it's age but it can be looped in the background unlike 3DMark.
 4. A document to write your benchmark score and overclocking settings down. This is for comparing your score improvements and possible overclocking settings. 
 
 # Testing Methodology
 Any guide or review lacking testing methodology is not a good guide, so I'll include this. 
 
-Throughout the guide, I'm using my Sapphire RX 6900XT Nitro+ SE[^1] for demonstration. The fan curve is default, Resizable BAR is enabled. Remember, everything I say, like benchmark score and percentage is all relative to my GPU, so yours, even when following the exact instructions, might be a little different. 
+Throughout the guide, I'm using my Sapphire RX 6900XT Nitro+ SE[^1] for demonstration. The fan curve is default, Resizable BAR is enabled, and everything about the PC is set as stock. Remember, everything I say, like benchmark score and percentage is all relative to my GPU, so yours, even when following the exact instructions, might be a little different. 
 
 | Hardware      | Model         |
 | ------------- | ------------- |
