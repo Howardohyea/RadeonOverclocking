@@ -144,7 +144,7 @@ Tom's Hardware for reviewing the [RX 6900 XT](https://www.tomshardware.com/revie
 
 Extreme overclocker Der8auer for dissecting and doing testing on his Reference RX 7900 XTX, leading to the conclusion of a defective vapor chamber. Information via a [Tom's Hardware's article](https://www.tomshardware.com/news/defective-vapor-chamber-may-be-causing-rx-7900-xtx-overheating-issue).
 
-[^1]: It's only when I finished benchmarking and halfway through writing did I notice I'm running on the `Quiet` VBIOS with a lower power limit. My scores might be lower in this case but it doesn't change much regarding this document.
+[^1]: It's only when I finished benchmarking and halfway through writing did I notice I'm running on the `Performance` VBIOS with a higher power limit. However, it's hard pushing higher past 332 watts as it's limited by the driver.
 [^2]: This is most obvious comparing a Reference 6900XT and the Strix 6800XT. The Strix have much more power available and it can beat the overclocked Reference 6900XT when the Strix is pushed to the limits.
 [^3]: By "power", I mean the rated TGP, and not the actual comsumed power. However, in practice, those two values are pretty similar, the GPU won't exceed TGP by more than a watt or two.
 [^4]: Unlike Nvidia cards, where overclocking the VRAM will cause visual artifacts and corrupt textures, the only indication the VRAM is at its limit for AMD is regressing performance. 
