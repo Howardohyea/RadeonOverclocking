@@ -23,5 +23,5 @@ If you feel like you have some changes or anything you want to implement, just m
 
 <!-- I've left this out in the actual document because not a lot of people will go and look at the source, so it should eliminate most spams. I hope whoever's reading this will only contact me with good faith.
 Discord: Howardohyea#6904
-email: howardohyea@outlook.com
+Email: howardohyea@outlook.com
 -->
