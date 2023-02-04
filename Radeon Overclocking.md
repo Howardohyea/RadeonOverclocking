@@ -34,7 +34,7 @@ Now, you'll also need some required software, and they're as follows:
 2. [HWInfo](https://www.hwinfo.com/) for monitoring system temperature, power draw, fans, and just about anything.
 3. [3DMark](https://3dmark.com), a synthetic benchmark for both CPU and GPU, it's not very good for comparison between hardware but useful to test overclocking and stability. The full test is paid but the free demo can be found [here](steam://install/231350), this demo link requires Steam to be installed to your PC.
 4. **Optional** [Unigine Heaven](https://benchmark.unigine.com/heaven) is absolutely ancient. First released in 2009 for the then-bleeding edge DX11, it's a tech demo and benchmark rolled into one. It's not recommended these days due to it's age but it can be looped in the background unlike 3DMark.
-4. A document to write your benchmark score and overclocking settings down. This is for comparing your score improvements and possible overclocking settings. 
+4. A document to write your benchmark score and overclocking settings down. This is for comparing your score improvements and possible overclocking settings. I have a template you can use [right here](Assets/Notes.txt).
 
 # Testing Methodology
 Any guide or review lacking testing methodology is not a good guide, so I'll include this. 
@@ -86,11 +86,11 @@ I suggest starting from the max, lower the VRAM in 50MHz steps and running a 3DM
 With VRAM maxed out and Fast Timings enabled, `10565` is the end result, 7% improvement over stock, we're making good progress! 
 
 ## Changing Clocks and Voltage
-Now, the GPU have access to more power, but it might not know how to tap into the extra potential, thus creating such inefficiency. It's only until we tweak the Voltage and Clock does the card know what to do. For starters, leave the minimum clock alone, changing that would only result in very bad idle power consumption and no perceivable performance gain[^5]. 
+Now, the GPU have access to more power when we upped the power limit, but it might not know how to tap into the extra potential, thus creating such inefficiency. It's only until we tweak the Voltage and Clock does the card know what to do. For starters, I suggest leave the minimum clock alone, and unlike it's name, this is actually *minimum **boost** clock*, if you up this value it would change how the card boosts, but 
 
 Strangely, only upping the Clock Limit slider doesn't seem to do a whole lot performance wise, and may even cause stability and deteriorating performance. This is especially the case for RDNA3 and not so much of an issue on RDNA1. That's where the voltage slider comes into play. For RDNA cards, Clock and Voltage is inversely related, lowering voltage will increase your clock. This seems counterintunitive, especially compared to how CPU overclocking works, but with lower voltages more power will become available to the GPU, thus clocking higher.
 
-First off, don't go and crank the GPU core frequency dial all the way to the max allowed, we need to tweak the voltage first. Start by dropping voltages in small steps, run a benchmark to check the core clock, and keep dropping voltages until you reach "the wall". For RDNA2 and 3, there's a "wall" that doesn't allow the card to clock higher despite being below the max frequency allowed, as specified by the frequency slider. This wall is around 50MHz below the Clock Limit specified by the software. In essence, "Maximum Frequency" seems to be "Maximum minus 50". 
+Like previously mentioned, don't go and crank the GPU core frequency dial all the way to the max allowed, we need to tweak the voltage first. Start by dropping voltages in small steps, run a benchmark to check the core clock, and keep dropping voltages until you reach "the wall". For RDNA2 and 3, there's a "wall" that doesn't allow the card to clock higher despite being below the max frequency allowed, as specified by the frequency slider. This wall is around 50MHz below the Clock Limit specified by the software. In essence, "Maximum Frequency" seems to be "Maximum minus 50". 
 
 When you reach the wall, now's the time to dial an increase for the Clock Limit slider. Add 100MHz and start decrease voltage again until you hit the new wall. At this point, we're just repeating some steps, which can be simplified as follow:
 
@@ -100,8 +100,21 @@ When you reach the wall, now's the time to dial an increase for the Clock Limit 
 
 That's it! You're overclocking!
 
-<!-- Insert overclocked screenshot and OC score here
--->
+## Overclocking results
+
+At the end of the day, I settled with the following settings, the highest I can go without causing a Driver Timeout error:
+
+| Setting      | Value         |
+| ------------ | ------------- |
+| Max Core Clock  | 2600  |
+| VRAM  | 2150 w/Fast Timing  |
+| Power limit | +15%, 312.8 watts |
+| Voltage | 1090mV |
+
+The GPU score with this setting averaged out to be `10916`. This is 11% over stock. Although efficiency did go down it's expected, and the loss isn't something to cry about. 
+
+I also dialed in a CPU overclock of 5.2GHz all core and ran a full Time Spy Extreme bench, in which you can find the result in [this link](http://www.3dmark.com/spy/35414279). Since this involved some CPU overclocking I did not include this score in any results shown above. 
+
 
 ### RDNA1 specific instructions
 There was a lot of memes about how bad the RX 5700XT drivers were. Well, it was *abysmal* at launch, but gotten vastly better in the coming months. However, overclocking is relatively simple for that generation, unlike RDNA2 and 3. Upping the core and memory clocks directly yields an improvement in performance. Despite that, tweaking voltage as above still allows the user to dial in more clocks. 
@@ -122,7 +135,7 @@ You might've noticed there's a limit to the frequency slider I mentioned previou
 Thing is, I doubt this limit would do much to most people anyways. The limit for the RX 6900 XT is 3GHz, and I imagine it is going to take some insane effort and cooling to hit it anyways, so I won't worry too much about the said limit.
 
 ## The RDNA3 Hotspot issue
-After the launch of RDNA3, buyers of AMD's Reference cards complained their card's hotspot temperature could shoot up to 110C after putting any load on the card. After some journalist and overclockers investigated, the issue appears to stem from a vapor chamber design flaw, causing the liquid to unable to circulate back to the GPU after condensation.
+After the launch of RDNA3, buyers of AMD's Reference cards complained their card's hotspot temperature could shoot up to 110C after putting any load on the card. After some journalists and overclockers investigated, the issue appears to stem from a vapor chamber design flaw, causing the liquid to unable to circulate back to the GPU after condensation.
 
 This appears to be specific to the Reference cards, so I suggest you buying a card from an AIB, like Asus or Sapphire, just to name a few.
 
@@ -148,6 +161,6 @@ Extreme overclocker Der8auer for dissecting and doing testing on his Reference R
 [^2]: This is most obvious comparing a Reference 6900XT and the Strix 6800XT. The Strix have much more power available and it can beat the overclocked Reference 6900XT when the Strix is pushed to the limits.
 [^3]: By "power", I mean the rated TGP, and not the actual comsumed power. However, in practice, those two values are pretty similar, the GPU won't exceed TGP by more than a watt or two.
 [^4]: Unlike Nvidia cards, where overclocking the VRAM will cause visual artifacts, corrupt textures, or crashes, the only indication the VRAM is at its limit for AMD is regressing performance. 
-[^5]: When going from idle to full power, all devices, graphics card or CPU, will take a few milisecond to ramp up, depending on the device. Dialing up the minimum clocks effectively cancels this ramp up at the cost of running the card at full speed perpetually, which is not worth the absurd idle power consumption this comes with. A good analogy would be running your car's engine at 3000 RPM waiting for the red light for the *tiny* advantage during launch, at the cost of absurd amounts of fuel.
+[^5]: When going from idle to full power, all devices, graphics card or CPU, will take a few tens of a milisecond to ramp up to full clock from idle, depending on the device (desktop CPUs tends to ramp up in a few milliseconds, while phone CPUs may take more than half a second). Dialing up the minimum clocks effectively cancels this ramp up at the cost of running the device at full speed perpetually, which is not worth the absurd idle power consumption this comes with. 
 [^6]: As of Driver version 22.5.1
 [^7]: Back in April 2021, famous overclocker Der8auer set a record for the RX 6900 XT at that time, a whopping 3.225GHz on LN2. His [video](https://www.youtube.com/watch?v=fhP46XWMkdY) on the subject have some fairly interesting insights about AMD's clock limits and extreme overclocking for RDNA cards.

@@ -1,0 +1,34 @@
+Benchmark notes
+
+Write your notes down like this (example):
+
+3DMark Time Spy Extreme GPU only
+
+    Run 1:
+        Measured clock: 2500
+        Score: 10000
+        Settings: 1v, 2550 core, 2150 VRAM w/fast timing
+
+
+Your benchbark notes:
+
+3DMark Time Spy Extreme GPU only
+    Run 1:
+        Measured clock:
+        Score:
+        Settings:
+
+    Run 2:
+        Measured clock:
+        Score:
+        Settings:
+
+    Run 3:
+        Measured clock:
+        Score:
+        Settings:
+
+    Run 4:
+        Measured clock:
+        Score:
+        Settings:
