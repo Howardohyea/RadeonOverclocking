@@ -86,7 +86,7 @@ I suggest starting from the max, lower the VRAM in 50MHz steps and running a 3DM
 With VRAM maxed out and Fast Timings enabled, `10565` is the end result, 7% improvement over stock, we're making good progress! 
 
 ## Changing Clocks and Voltage
-Now, the GPU have access to more power when we upped the power limit, but it might not know how to tap into the extra potential, thus creating such inefficiency. It's only until we tweak the Voltage and Clock does the card know what to do. For starters, I suggest leave the minimum clock alone, and unlike it's name, this is actually *minimum **boost** clock*, if you up this value it would change how the card boosts, but 
+Now, the GPU have access to more power when we upped the power limit, but it might not know how to tap into the extra potential, thus creating such inefficiency. It's only until we tweak the Voltage and Clock does the card know what to do. For starters, you should know what the Minimum Clock does, and unlike it's name, this is actually *minimum **boost** clock*, if you up this value it would change how the card boosts, so it will boost more consistently.
 
 Strangely, only upping the Clock Limit slider doesn't seem to do a whole lot performance wise, and may even cause stability and deteriorating performance. This is especially the case for RDNA3 and not so much of an issue on RDNA1. That's where the voltage slider comes into play. For RDNA cards, Clock and Voltage is inversely related, lowering voltage will increase your clock. This seems counterintunitive, especially compared to how CPU overclocking works, but with lower voltages more power will become available to the GPU, thus clocking higher.
 
