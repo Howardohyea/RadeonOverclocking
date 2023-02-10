@@ -7,7 +7,7 @@ Write your notes down like this (example):
     Run 1:
         Measured clock: 2500
         Score: 10000
-        Settings: 1v, 2550 core, 2150 VRAM w/fast timing
+        Settings: 1090mv, 2550 core, 2150 VRAM w/fast timing
 
 
 Your benchbark notes:

@@ -49,7 +49,7 @@ Throughout the guide, I'm using my Sapphire RX 6900XT Nitro+ SE[^1] for demonstr
 | Motherboard | Strix Z690-A |
 | Case | Corsair 4000D Airflow |
 
-All benchmarks were ran 3 times with the average taken. <!-- in case you're wondering, no, you can't find my benchmark runs I listed in the 3DMark database, since I'm running a Custom Test, the results isn't uploaded, hope you're alright taking my word for it.-->
+All benchmarks were ran 3 times with the average taken.
 
 # Overclocking
 With the software and test system out of the way, it's time to dial in some overclocking.
@@ -102,7 +102,7 @@ That's it! You're overclocking!
 
 ## Overclocking results
 
-At the end of the day, I settled with the following settings, the highest I can go without causing a Driver Timeout error:
+At the end of the day, I settled with the following settings, the highest I can go without causing a Driver Timeout error or 3DMark crashing:
 
 | Setting      | Value         |
 | ------------ | ------------- |
@@ -111,9 +111,9 @@ At the end of the day, I settled with the following settings, the highest I can 
 | Power limit | +15%, 312.8 watts |
 | Voltage | 1090mV |
 
-The GPU score with this setting averaged out to be `10916`. This is 11% over stock. Although efficiency did go down it's expected, and the loss isn't something to cry about. 
+The GPU score with this setting averaged out to be `10916`. This is 11% over stock, and quite an improvement. Although efficiency did go down it's expected, and the loss isn't something to cry about. Also, even if you have another 6900 XT, you can't take my exact settings and apply it to your card, because minor variances in the silicon quality will result in different optimal settings for your GPU, so you'll have to tune everything yourself.
 
-I also dialed in a CPU overclock of 5.2GHz all core and ran a full Time Spy Extreme bench, in which you can find the result in [this link](http://www.3dmark.com/spy/35414279). Since this involved some CPU overclocking I did not include this score in any results shown above. 
+I also dialed in a CPU overclock of 5.2GHz all core and ran a full Time Spy Extreme bench, representing my whole PC after overclocking every component. You can find the result in [this link](http://www.3dmark.com/spy/35414279). Since this involved some CPU overclocking I did not include this score in any results shown above. 
 
 
 ### RDNA1 specific instructions
