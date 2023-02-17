@@ -9,6 +9,7 @@
     4. [Tuning the VRAM](#tuning-the-vram)
     5. [Changing Clocks and Voltage](#changing-clocks-and-voltage)
         - [RDNA1 specific instructions](#rdna1-specific-instructions)
+    6. [The More Power Tool](#the-more-power-tool)
 - [Extra](#extra)
     1. [Enabling Resizable BAR on Intel CPUs](#enabling-resizable-bar-on-intel-cpus)
     2. [Pushing past the frequency limit](#pushing-past-the-frequency-limit)
@@ -54,7 +55,7 @@ All benchmarks were ran 3 times with the average taken.
 # Overclocking
 With the software and test system out of the way, it's time to dial in some overclocking.
 
-However, before we do any tuning, we need to get some baseline of how your GPU performs.
+However, before we do any tuning, we need to get some baseline of how your GPU performs. Go and download the [Notes.txt](/Assets/Notes.txt) and use that to record all your overclocking journey for easier reference and score tracking. 
 
 ## The Software
 The tuning page is hidden away pretty well, You need to go to `Performance` --> `Tuning`, and under `Tuning Control`, select `Custom`.
@@ -119,8 +120,16 @@ I also dialed in a CPU overclock of 5.2GHz all core and ran a full Time Spy Extr
 ### RDNA1 specific instructions
 There was a lot of memes about how bad the RX 5700XT drivers were. Well, it was *abysmal* at launch, but gotten vastly better in the coming months. However, overclocking is relatively simple for that generation, unlike RDNA2 and 3. Upping the core and memory clocks directly yields an improvement in performance. Despite that, tweaking voltage as above still allows the user to dial in more clocks. 
 
+## The More Power Tool
+Remember that there's a limit in how high the power limit slider can go in AMD Software? That limit tends to be 15%, which isn't a whole lot if you want to really overclock the heck out of the card. AMD locked stuff down pretty tight but it doesn't mean someone else is supporting it via 3rd party software.
+
+This software is called the [More Power Tool](https://www.igorslab.de/en/red-bios-editor-and-morepowertool-adjust-and-optimize-your-vbios-and-even-more-stable-overclocking-navi-unlimited/2/) which edits your GPU's various settings that's not exposed through the software and to you. Usually, you can just run the downloaded `.exe` file, dial in a GPU power that you like (for example, 350 watts, *depending on available power delivery on your GPU*), and just overclock as usual from AMD Software via the instructions above. 
+
+### MPT on the RX 7000 series
+As promising as MPT sounds, AMD have completely locked out that software on RX 7000 series GPUs, it is impossible to use the software without a driver and BIOS rewrite so it's impossible to use this method to overclock those cards. 
+
 # Extra
-There is some other information about those cards that I want to point out, or just additional information.
+There is some other information about those cards that I want to point out, or just additional information that doesn't belong above.
 
 ## Enabling Resizable BAR on Intel CPUs
 When you hover your mouse over the ReBAR toggle, the software claims "This feature is only available on AMD CPU or APU paired with an AMD GPU"[^6]. I'm not sure what AMD is trying to achieve here, spreading false information, but it's totally possible to turn this on with an Intel CPU.

@@ -19,6 +19,11 @@ Since GitHub doesn't have a very good comment system, just use [issues](https://
 ## Contribute
 If you feel like you have some changes or anything you want to implement, just make a fork of `RadeonOverclocking`, do your edit, then submit a pull request back to this project. I'm quite busy these days so any additional information is greatly appreciated. 
 
+## Disclaimer
+Although computers nowadays are filled with safeguards that makes bricking a system at the hardware level virtually impossible with a bit of common sense, the possibility is still there. Furthermore, a borked OS and loosing your files is another possibility, so I also recommend you to create backups regularly.
+
+With that aside, I am ***not*** responsible for any damage to your hardware and/or software by following this guide, however I do try my best to provide correct and factual information and making it as safe as possible. 
+
 <!-- contact-->
 
 <!-- I've left this out in the actual document because not a lot of people will go and look at the source, so it should eliminate most spams. I hope whoever's reading this will only contact me with good faith.
