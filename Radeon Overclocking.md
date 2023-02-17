@@ -126,7 +126,9 @@ Remember that there's a limit in how high the power limit slider can go in AMD S
 This software is called the [More Power Tool](https://www.igorslab.de/en/red-bios-editor-and-morepowertool-adjust-and-optimize-your-vbios-and-even-more-stable-overclocking-navi-unlimited/2/) which edits your GPU's various settings that's not exposed through the software and to you. Usually, you can just run the downloaded `.exe` file, dial in a GPU power that you like (for example, 350 watts, *depending on available power delivery on your GPU*), and just overclock as usual from AMD Software via the instructions above. 
 
 ### MPT on the RX 7000 series
-As promising as MPT sounds, AMD have completely locked out that software on RX 7000 series GPUs, it is impossible to use the software without a driver and BIOS rewrite so it's impossible to use this method to overclock those cards. 
+As promising as MPT sounds, AMD have completely locked out that software on RX 7000 series GPUs, it is impossible to use the software without a driver and BIOS rewrite. If anyone is interested in undertaking that endeavor please contact me when you have an 1.0 release. 
+
+If you want to Extreme Overclock you're better off buying an Nvidia card to be honest, at least they have more power headroom.
 
 # Extra
 There is some other information about those cards that I want to point out, or just additional information that doesn't belong above.
@@ -162,7 +164,7 @@ TechPowerUp and their [Asus RX 7900 XTX OC review](https://www.techpowerup.com/r
 
 TPU and their [Asus Strix RX 5700 XT review](https://www.techpowerup.com/review/asus-radeon-rx-5700-xt-strix-oc/32.html), which provided simple overclocking instructions for RDNA1.
 
-Tom's Hardware for reviewing the [RX 6900 XT](https://www.tomshardware.com/reviews/amd-radeon-rx-6900-xt-review) for confirming how RDNA2 overclocks and providing a comparison for my card. I also used the screenshot for the BIOS page from their [Z690 A review](https://www.tomshardware.com/reviews/asus-rog-strix-z690a-gaming-review/2).
+Tom's Hardware for reviewing the [RX 6900 XT](https://www.tomshardware.com/reviews/amd-radeon-rx-6900-xt-review) for confirming how RDNA2 overclocks and providing a comparison for my card. I also used the screenshot for the BIOS page from their [Strix Z690-A review](https://www.tomshardware.com/reviews/asus-rog-strix-z690a-gaming-review/2).
 
 Extreme overclocker Der8auer for dissecting and doing testing on his Reference RX 7900 XTX, leading to the conclusion of a defective vapor chamber. Information via a [Tom's Hardware's article](https://www.tomshardware.com/news/defective-vapor-chamber-may-be-causing-rx-7900-xtx-overheating-issue).
 
